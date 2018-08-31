@@ -1,0 +1,35 @@
+{
+  "name": "reactmusicplayer",
+  "version": "1.0.0",
+  "description": "\"# ReactMusicPlayer\"",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.17.1",
+    "webpack-dev-server": "^3.1.7"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode development",
+    "build": "webpack --mode production",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chenying517/ReactMusicPlayer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chenying517/ReactMusicPlayer/issues"
+  },
+  "homepage": "https://github.com/Chenying517/ReactMusicPlayer#readme"
+}
