@@ -4,6 +4,7 @@
   "description": "\"# ReactMusicPlayer\"",
   "main": "index.js",
   "dependencies": {
+    "file-loader": "^2.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "webpack": "^4.17.1",
@@ -14,6 +15,9 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
