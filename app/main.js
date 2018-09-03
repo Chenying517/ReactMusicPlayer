@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Greeter from './Greeter';
+import Header from './page/header';
 
 render(
-    <Greeter />,
+    <Header />,
     document.getElementById('root')
 );
 
