@@ -5,7 +5,7 @@ class Header extends Component {
         return (
             <div>
                 <img src={require('../../static/images/logo.png')}  />
-                <div> React Music Player</div>
+                <div> React Music Player 哎</div>
             </div>
         );
     }
