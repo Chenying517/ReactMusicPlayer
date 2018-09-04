@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import Styles from '../../static/css/style.css'
 
 class Header extends Component {
     render() {
         return (
             <div>
-                <img src={require('../../static/images/logo.png')}  />
-                <div> React Music Player 哎</div>
+                <img src={ require('../../static/images/logo.png')} className='headerPic' width="40" alt="" className="-col-auto"/>
+                <h1 className="caption">Music Player Build By React</h1>
             </div>
         );
     }
