@@ -1,13 +1,9 @@
 import React from 'react';
-import { render } from 'react-dom';
-import Header from './page/header';
-import Progress from './page/progress'
+import ReactDOM from 'react-dom';
+import Index from './page/index';
 
-render(
-    <div>
-        <Header />
-        <Progress progress={'1s'}/>
-    </div>,
+ReactDOM.render(
+    <Index />,
     document.getElementById('root')
 );
 
