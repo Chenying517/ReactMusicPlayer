@@ -4,6 +4,8 @@ import Header from './header';
 import Player from './player'
 import Progress from './progress'
 import MusicList from '../../static/config'
+import ListItem from './listItem'
+
 
 let duration = null;
 class Index extends Component {
@@ -11,7 +13,8 @@ class Index extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            MusicListState: MusicList[1]
+            MUSIC_LIST: MusicList,
+            currentMusicList: MusicList[3]
         }
     }
 
@@ -19,7 +22,11 @@ class Index extends Component {
         return (
             <div>
                 <Header />
-                <Player MusicListState={this.state.MusicListState} />
+                {/* <Player MusicListState={this.state.currentMusicList} /> */}
+                <ListItem
+                    MUSIC_LIST={this.state.MUSIC_LIST}
+                    currentMusicList={this.state.currentMusicList}
+                ></ListItem>
             </div>
         )
     }
@@ -27,7 +34,7 @@ class Index extends Component {
         $("#player").jPlayer({
             ready: function () {
                 $(this).jPlayer("setMedia", {
-                    mp3: 'http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3'
+                    mp3: 'http://oj4t8z2d5.bkt.clouddn.com/%E6%88%91%E8%A6%81%E4%BD%A0.mp3'
                 })
                     .jPlayer('play')
                     ;
@@ -35,7 +42,7 @@ class Index extends Component {
             supplied: "mp3",
             wmode: "window",
             useStateClassSkin: true,
-            volume:0.1
+            volume: 0.1
         });
     }
 }

@@ -9,8 +9,10 @@ class Player extends Component {
         super(props)
         this.state = {
             progress: 0,
-            volume: 0
+            volume: 0,
+            isplay:true
         }
+        this.play=this.play.bind(this)
     }
     onchangeProgressHandle(progress) {
         var changeTime = duration * progress / 100;
@@ -20,21 +22,31 @@ class Player extends Component {
     onchangevolumeHandle(progress) {
         $('#player').jPlayer('volume', progress/100)
     }
+    play(){
+        if(this.state.isplay){
+            $('#player').jPlayer('pause');
+        }else{
+            $('#player').jPlayer('play');
+        }
+        this.setState({isplay:!this.state.isplay});
+    }
     render() {
         return (
-            <div>
+            <div className="player">
                 <h1 className="caption">我的私人音乐坊 &gt;</h1>
                 <div className="mt20 row">
-                    <div>
-                        <p>{this.props.MusicListState.title}</p>
+                    <div className="musicfomt">
+                        <p className='muscNmae'>{this.props.MusicListState.title}</p>
                         <p>{this.props.MusicListState.artist}</p>
-                        <div>
-                            <span>时间</span>
-                            <div>音量
+                        <div className='row'>
+                            <span>-3:20</span>
+                            <div style={{height:30}}>
                                 <div style={{ height: 10, lineHeight: '10px' }}>
+                                    <i className="icon-volume rt" style={{top: 5, left: -20}}></i>
                                     <Progress
                                         progress={this.state.volume}
                                         onProgressChange={this.onchangevolumeHandle}
+                                        barColor={'#aaa'}
                                     >
                                     </Progress>
                                 </div>
@@ -49,7 +61,7 @@ class Player extends Component {
                         </div>
                         <div>
                             <i className="icon prev" onClick={this.prev}></i>
-                            <i className={`icon ml20 ${this.state.isPlay ? 'pause' : 'play'}`} onClick={this.play}></i>
+                            <i className={`icon ml20 ${this.state.isplay ? 'pause' : 'play'}`} onClick={this.play}></i>
                             <i className="icon next ml20" onClick={this.next}></i>
                         </div>
                     </div>
