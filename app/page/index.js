@@ -3,15 +3,23 @@ import { render } from 'react-dom';
 import Header from './header';
 import Player from './player'
 import Progress from './progress'
+import MusicList from '../../static/config'
 
 let duration = null;
 class Index extends Component {
-   
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            MusicListState: MusicList[1]
+        }
+    }
+
     render() {
         return (
             <div>
                 <Header />
-                <Player />
+                <Player MusicListState={this.state.MusicListState} />
             </div>
         )
     }
@@ -19,14 +27,15 @@ class Index extends Component {
         $("#player").jPlayer({
             ready: function () {
                 $(this).jPlayer("setMedia", {
-                    mp3: "http://oj4t8z2d5.bkt.clouddn.com/%E9%AD%94%E9%AC%BC%E4%B8%AD%E7%9A%84%E5%A4%A9%E4%BD%BF.mp3"
+                    mp3: 'http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3'
                 })
-                    // .jPlayer('play')
+                    .jPlayer('play')
                     ;
             },
             supplied: "mp3",
             wmode: "window",
-            useStateClassSkin: true
+            useStateClassSkin: true,
+            volume:0.1
         });
     }
 }
