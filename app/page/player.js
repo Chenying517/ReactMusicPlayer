@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom';
 import Progress from './progress'
+import { link } from 'react-router'
 
 let duration = null;
 
@@ -10,9 +11,9 @@ class Player extends Component {
         this.state = {
             progress: 0,
             volume: 0,
-            isplay:true
+            isplay: true
         }
-        this.play=this.play.bind(this)
+        this.play = this.play.bind(this)
     }
     onchangeProgressHandle(progress) {
         var changeTime = duration * progress / 100;
@@ -20,29 +21,32 @@ class Player extends Component {
         $('#player').jPlayer('play', changeTime);
     }
     onchangevolumeHandle(progress) {
-        $('#player').jPlayer('volume', progress/100)
+        $('#player').jPlayer('volume', progress / 100)
     }
-    play(){
-        if(this.state.isplay){
+    play() {
+        if (this.state.isplay) {
             $('#player').jPlayer('pause');
-        }else{
+        } else {
             $('#player').jPlayer('play');
         }
-        this.setState({isplay:!this.state.isplay});
+        this.setState({ isplay: !this.state.isplay });
     }
     render() {
         return (
             <div className="player">
-                <h1 className="caption">我的私人音乐坊 &gt;</h1>
+                <h1 className="caption">
+                    我的私人音乐坊 &gt;
+                    <Link to="/listItem">我的私人音乐坊 &gt;</Link>
+                </h1>
                 <div className="mt20 row">
                     <div className="musicfomt">
                         <p className='muscNmae'>{this.props.MusicListState.title}</p>
                         <p>{this.props.MusicListState.artist}</p>
                         <div className='row'>
                             <span>-3:20</span>
-                            <div style={{height:30}}>
+                            <div style={{ height: 30 }}>
                                 <div style={{ height: 10, lineHeight: '10px' }}>
-                                    <i className="icon-volume rt" style={{top: 5, left: -20}}></i>
+                                    <i className="icon-volume rt" style={{ top: 5, left: -20 }}></i>
                                     <Progress
                                         progress={this.state.volume}
                                         onProgressChange={this.onchangevolumeHandle}

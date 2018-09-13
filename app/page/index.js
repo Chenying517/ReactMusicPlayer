@@ -6,10 +6,8 @@ import Progress from './progress'
 import MusicList from '../../static/config'
 import ListItem from './listItem'
 
-
 let duration = null;
-class Index extends Component {
-
+class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -22,11 +20,16 @@ class Index extends Component {
         return (
             <div>
                 <Header />
-                {/* <Player MusicListState={this.state.currentMusicList} /> */}
-                <ListItem
-                    MUSIC_LIST={this.state.MUSIC_LIST}
+                <Player
                     currentMusicList={this.state.currentMusicList}
-                ></ListItem>
+
+                ></Player>
+                {/* {React.cloneElement(this.props.children,
+                    {
+                        MUSIC_LIST: this.state.MUSIC_LIST,
+                        MusicListState: this.state.currentMusicList,
+                        currentMusicList: this.state.currentMusicList
+                    })} */}
             </div>
         )
     }
@@ -46,4 +49,4 @@ class Index extends Component {
         });
     }
 }
-export default Index;
+export default App;
