@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 // import App from './index'
 // import Player from './player'
 // import ListItem from './listItem'
-import { Router, IndexRoute, Link, Route, browserHistory, hashHistory } from 'react-router';
+// import { Router, IndexRoute, Link, Route, browserHistory, hashHistory } from 'react-router';
 
 
 class Root extends React.Component {

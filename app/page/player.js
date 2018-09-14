@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom';
 import Progress from './progress'
-import { link } from 'react-router'
+// import { Link } from 'react-router'
 
 let duration = null;
 
@@ -36,11 +36,11 @@ class Player extends Component {
             <div className="player">
                 <h1 className="caption">
                     我的私人音乐坊 &gt;
-                    <Link to="/listItem">我的私人音乐坊 &gt;</Link>
+                    {/* <Link to="/listItem">我的私人音乐坊 &gt;</Link> */}
                 </h1>
                 <div className="mt20 row">
                     <div className="musicfomt">
-                        <p className='muscNmae'>{this.props.MusicListState.title}</p>
+                        <p className='muscName'>{this.props.MusicListState.title}</p>
                         <p>{this.props.MusicListState.artist}</p>
                         <div className='row'>
                             <span>-3:20</span>

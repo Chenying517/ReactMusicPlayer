@@ -21,15 +21,13 @@ class App extends React.Component {
             <div>
                 <Header />
                 <Player
-                    currentMusicList={this.state.currentMusicList}
-
+                    MusicListState={this.state.currentMusicList}
                 ></Player>
-                {/* {React.cloneElement(this.props.children,
-                    {
-                        MUSIC_LIST: this.state.MUSIC_LIST,
-                        MusicListState: this.state.currentMusicList,
-                        currentMusicList: this.state.currentMusicList
-                    })} */}
+                <ListItem
+                    currentMusicList={this.state.currentMusicList}
+                    MUSIC_LIST={ this.state.MUSIC_LIST}
+                >
+                </ListItem>
             </div>
         )
     }
