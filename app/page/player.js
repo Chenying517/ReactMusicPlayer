@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom';
 import Progress from './progress'
+import Pubsub from 'pubsub-js'
 // import { Link } from 'react-router'
 
 let duration = null;
@@ -30,6 +31,12 @@ class Player extends Component {
             $('#player').jPlayer('play');
         }
         this.setState({ isplay: !this.state.isplay });
+    }
+    prev(){
+        Pubsub.publish('PLAY_PREV')
+    }
+    next(){
+        Pubsub.publish('PLAY_NEXT')
     }
     render() {
         return (
